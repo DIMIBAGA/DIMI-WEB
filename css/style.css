@@ -482,14 +482,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
   background: #fff;
   padding: 80px 0;
+  
 }
 
 #about .about-img {
   overflow: hidden;
+  padding-left: 90px;
+
 }
 
 #about .about-img img {
-  max-width: 65%;
+  max-width: 75%;
 }
 
 @media (max-width: 768px) {
