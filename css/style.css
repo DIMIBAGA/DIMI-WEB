@@ -366,126 +366,90 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.overlay {
-  position: absolute;
-  top: -99.1%;
-  height: 100%;
-  left: 0;
-  width: 100%;
-  transition: all 1s ease;
-  background: #c69f1f; /* Old browsers */
-  background: linear-gradient(251deg, #e60c0c, #f3de2d, #3de84b, #2baeea);
-  background-size: 800% 800%;
-
-  -webkit-animation: overlaygradient 30s ease infinite;
-  -moz-animation: overlaygradient 30s ease infinite;
-  -o-animation: overlaygradient 30s ease infinite;
-  animation: overlaygradient 30s ease infinite;
-  
-  z-index: 9998;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-}
-
-@-webkit-keyframes overlaygradient {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@-moz-keyframes overlaygradient {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@-o-keyframes overlaygradient {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@keyframes overlaygradient { 
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-.anim {
-  left: 0;
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
   top: 0;
-  animation: menu-anim 1.2s 1 ease-out normal;
-  width: 100%;
-  transition: all 0.7s ease;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
   background: rgba(0, 0, 0, 0.9);
-  z-index: 9998;
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
 }
 
-/* MENU ANIMATION */
-
-@-webkit-keyframes menu-anim {
-  0% {
-    left: 0;
-    top: -99.1%;
-    width: 100%;
-    background: #c6b51f;
-  }
-  33% {
-    left: -99.5%;
-    top: -99.1%;
-    width: 100%;
-    background: #caac25;
-  }
-  66% {
-    left: -99.5%;
-    top: 0;
-    width: 100%;
-    background: #bba421;
-  }
-  100% {
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-  }
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-nav > .overlay > ul {
-  width: 100%;
-  text-align: center;
-  padding-left: 0;
-  margin-left: -10px;
-  font-size: 1.5em;
-  font-weight: 600;
-}
-nav > .overlay > ul > li {
-  margin: 6px 0;
-}
-nav > .overlay > ul > li a {
-  text-decoration: none;
-  color: white;
+#mobile-nav ul li {
   position: relative;
-  display: inline-block;
-  padding: .6rem 1rem;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+#mobile-nav ul li a:hover {
+  color: #fff;
+}
+
+#mobile-nav ul li li {
+  padding-left: 30px;
+}
+
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #03C4EB;
+}
+
+#mobile-nav ul .menu-item-active {
+  color: #03C4EB;
+}
+
+#mobile-body-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+/* Mobile Nav body classes */
+body.mobile-nav-active {
   overflow: hidden;
 }
-nav > .overlay > ul > li a::after {
-  display: block;
-  margin: 0 auto;
-  width: 2.9rem;
-  content: "";
+
+body.mobile-nav-active #mobile-nav {
   left: 0;
-  height: 0.15rem;
-  background: #ffffff;
-  transition: all 0.4s ease;
-}
-nav > .overlay > ul > li a:hover {
-  text-decoration: none;
-}
-nav > .overlay > ul > li a:hover::after {
-  width: 4rem;
 }
 
-/* Mobile Nav Styling */
+body.mobile-nav-active #mobile-nav-toggle {
+  color: #fff;
+}
 
 
 
