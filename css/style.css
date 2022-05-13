@@ -451,6 +451,125 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
+.overlay {
+  position: absolute;
+  top: -99.1%;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  transition: all 1s ease;
+  background: #c69f1f; /* Old browsers */
+  background: linear-gradient(251deg, #e60c0c, #f3de2d, #3de84b, #2baeea);
+  background-size: 800% 800%;
+
+  -webkit-animation: overlaygradient 30s ease infinite;
+  -moz-animation: overlaygradient 30s ease infinite;
+  -o-animation: overlaygradient 30s ease infinite;
+  animation: overlaygradient 30s ease infinite;
+  
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+@-webkit-keyframes overlaygradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes overlaygradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes overlaygradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes overlaygradient { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.anim {
+  left: 0;
+  top: 0;
+  animation: menu-anim 1.2s 1 ease-out normal;
+  width: 100%;
+  transition: all 0.7s ease;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9998;
+}
+
+/* MENU ANIMATION */
+
+@-webkit-keyframes menu-anim {
+  0% {
+    left: 0;
+    top: -99.1%;
+    width: 100%;
+    background: #c6b51f;
+  }
+  33% {
+    left: -99.5%;
+    top: -99.1%;
+    width: 100%;
+    background: #caac25;
+  }
+  66% {
+    left: -99.5%;
+    top: 0;
+    width: 100%;
+    background: #bba421;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+nav > .overlay > ul {
+  width: 100%;
+  text-align: center;
+  padding-left: 0;
+  margin-left: -10px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+nav > .overlay > ul > li {
+  margin: 6px 0;
+}
+nav > .overlay > ul > li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding: .6rem 1rem;
+  overflow: hidden;
+}
+nav > .overlay > ul > li a::after {
+  display: block;
+  margin: 0 auto;
+  width: 2.9rem;
+  content: "";
+  left: 0;
+  height: 0.15rem;
+  background: #ffffff;
+  transition: all 0.4s ease;
+}
+nav > .overlay > ul > li a:hover {
+  text-decoration: none;
+}
+nav > .overlay > ul > li a:hover::after {
+  width: 4rem;
+}
+
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -492,7 +611,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-img img {
-  max-width: 75%;
+  max-width: 55%;
 }
 
 @media (max-width: 768px) {
